@@ -1,0 +1,22 @@
+{
+  "name": "projectmind-vscode",
+  "displayName": "ProjectMind",
+  "description": "Official VS Code extension for ProjectMind repository intelligence.",
+  "version": "1.0.0",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "Machine Learning",
+    "Other"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "projectmind.generateContext",
+        "title": "ProjectMind: Generate Context"
+      }
+    ]
+  }
+}

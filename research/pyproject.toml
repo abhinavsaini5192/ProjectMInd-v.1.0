@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "projectmind_research"
+version = "1.0.0"
+description = "ProjectMind AI Research Platform for training and evaluating repository intelligence models."
+authors = [
+    {name = "ProjectMind Team"}
+]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "torch>=2.0.0",
+    "transformers>=4.30.0",
+    "datasets>=2.13.0",
+    "scikit-learn>=1.2.0",
+    "matplotlib>=3.7.0"
+]
+
+[project.scripts]
+projectmind-research = "projectmind_research.main:cli"

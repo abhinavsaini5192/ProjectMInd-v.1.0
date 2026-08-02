@@ -1,0 +1,13 @@
+{
+  "version": "1.0.0",
+  "repository": {
+    "include": ["src/**/*", "package.json"],
+    "exclude": ["node_modules", "dist", "coverage"]
+  },
+  "plugins": {
+    "enabled": []
+  },
+  "memory": {
+    "maxSize": "500MB"
+  }
+}

@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  projectmind:
+    build: .
+    volumes:
+      - .:/workspace
+    environment:
+      - PROJECTMIND_WORKSPACE=/workspace
+    command: ["start"]
