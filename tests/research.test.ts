@@ -12,7 +12,11 @@ describe('ResearchLayerService', () => {
   });
 
   afterEach(() => {
-    if (fs.existsSync(testWorkspace)) fs.rmSync(testWorkspace, { recursive: true, force: true });
+    try {
+      if (fs.existsSync(testWorkspace)) fs.rmSync(testWorkspace, { recursive: true, force: true });
+    } catch {
+      // Ignore transient file lock on cleanup
+    }
   });
 
   it('should passively observe MemoryMerged events, anonymize payload, and build a jsonl dataset with a manifest', async () => {

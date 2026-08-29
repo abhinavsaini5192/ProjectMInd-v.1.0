@@ -12,13 +12,14 @@ export class FeatureBoundaryAnalyzer {
   ) {}
 
   public detectBoundaryViolations(boundaryDef: FeatureBoundary): ArchitectureViolation[] {
-    const feature = this.featRegistry.get(boundaryDef.featureId);
+    const feature: any = (this.featRegistry as any).getSync ? (this.featRegistry as any).getSync(boundaryDef.featureId) : this.featRegistry.get(boundaryDef.featureId);
     if (!feature) return [];
 
     const violations: ArchitectureViolation[] = [];
+    const symbolIds = feature.symbolIds || (feature.references?.filter((r: any) => r.resourceType === 'SYMBOL').map((r: any) => r.resourceId) || []);
 
     // Check all dependencies of this feature's symbols
-    for (const symId of feature.symbolIds) {
+    for (const symId of symbolIds) {
       const outEdges = this.depRegistry.getOutEdges(symId);
       for (const edgeId of outEdges) {
         const dep = this.depRegistry.getDependency(edgeId)!;

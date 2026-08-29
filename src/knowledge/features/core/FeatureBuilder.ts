@@ -27,22 +27,22 @@ export class FeatureBuilder {
     const hashPayload = `${this.symbolIds.sort().join(',')}:${this.dependencyIds.sort().join(',')}`;
     const hash = crypto.createHash('sha256').update(hashPayload).digest('hex');
 
-    return new Feature(
+    return {
       id,
-      this.name,
-      this.description,
-      this.confidence,
-      this.signals,
-      this.symbolIds,
-      [], // relationships not explicitly linked in mock
-      this.dependencyIds,
-      [], // routes
-      [], // config
-      this.testSymbolIds,
-      [], // docs
-      { size: this.symbolIds.length, complexity: 0, coupling: 0, cohesion: 0, stability: 0, health: 100, coverage: 0, volatility: 0 },
-      1,
+      name: this.name,
+      description: this.description,
+      confidence: this.confidence,
+      signals: this.signals,
+      symbolIds: this.symbolIds,
+      relationshipIds: [],
+      dependencyIds: this.dependencyIds,
+      routes: [],
+      configuration: [],
+      testSymbolIds: this.testSymbolIds,
+      documentationUrls: [],
+      metrics: { size: this.symbolIds.length, complexity: 0, coupling: 0, cohesion: 0, stability: 0, health: 100, coverage: 0, volatility: 0 },
+      version: 1,
       hash
-    );
+    };
   }
 }

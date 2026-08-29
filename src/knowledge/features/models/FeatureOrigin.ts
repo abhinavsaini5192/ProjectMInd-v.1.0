@@ -1,0 +1,6 @@
+export enum FeatureOrigin {
+  MANUAL = 'MANUAL',
+  DISCOVERED = 'DISCOVERED',
+  IMPORTED = 'IMPORTED',
+  INFERRED = 'INFERRED'
+}
