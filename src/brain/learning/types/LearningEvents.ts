@@ -1,0 +1,10 @@
+export const DECISION_EXECUTED = 'Learning:DecisionExecuted';
+export const AGENT_SESSION_STARTED = 'Learning:AgentSessionStarted';
+export const AGENT_SESSION_COMPLETED = 'Learning:AgentSessionCompleted';
+export const OUTCOME_DETECTED = 'Learning:OutcomeDetected';
+export const CONTEXT_EVALUATED = 'Learning:ContextEvaluated';
+export const DECISION_EVALUATED = 'Learning:DecisionEvaluated';
+export const HUMAN_FEEDBACK_RECEIVED = 'Learning:HumanFeedbackReceived';
+export const LEARNING_RECORD_CREATED = 'Learning:LearningRecordCreated';
+export const LEARNING_RECORD_REJECTED = 'Learning:LearningRecordRejected';
+export const POLICY_UPDATED = 'Learning:PolicyUpdated';

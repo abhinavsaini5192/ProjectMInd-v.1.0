@@ -1,0 +1,11 @@
+export const REASONING_STARTED = 'Reasoning:Started';
+export const EVIDENCE_COLLECTED = 'Reasoning:EvidenceCollected';
+export const HYPOTHESIS_GENERATED = 'Reasoning:HypothesisGenerated';
+export const HYPOTHESIS_UPDATED = 'Reasoning:HypothesisUpdated';
+export const CONTRADICTION_ANALYZED = 'Reasoning:ContradictionAnalyzed';
+export const KNOWLEDGE_GAP_DETECTED = 'Reasoning:KnowledgeGapDetected';
+export const CONFIDENCE_CALCULATED = 'Reasoning:ConfidenceCalculated';
+export const CLARIFICATION_REQUIRED = 'Reasoning:ClarificationRequired';
+export const REASONING_COMPLETED = 'Reasoning:Completed';
+export const REASONING_FAILED = 'Reasoning:Failed';
+export const DECISION_CONFIDENCE_CHANGED = 'Reasoning:DecisionConfidenceChanged';

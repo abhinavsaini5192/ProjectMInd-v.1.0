@@ -1,0 +1,25 @@
+export enum TrustLevel {
+  VERIFIED_CODE_FACT = 'VERIFIED_CODE_FACT',
+  ANALYZED_ARCHITECTURE = 'ANALYZED_ARCHITECTURE',
+  STORED_MEMORY = 'STORED_MEMORY',
+  HISTORICAL_INFORMATION = 'HISTORICAL_INFORMATION',
+  INFERRED_INFORMATION = 'INFERRED_INFORMATION'
+}
+
+export enum ContextSourceType {
+  MEMORY = 'MEMORY',
+  KNOWLEDGE_GRAPH = 'KNOWLEDGE_GRAPH',
+  DEPENDENCY_ENGINE = 'DEPENDENCY_ENGINE',
+  FEATURE_ENGINE = 'FEATURE_ENGINE',
+  CHANGE_HISTORY = 'CHANGE_HISTORY',
+  ARCHITECTURE_ENGINE = 'ARCHITECTURE_ENGINE'
+}
+
+export interface ContextSource {
+  sourceType: ContextSourceType;
+  sourceId: string;
+  confidence: number;
+  timestamp: number;
+  trustLevel: TrustLevel;
+  lastVerified?: number;
+}

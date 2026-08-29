@@ -1,0 +1,5 @@
+export enum MemoryType {
+  EPISODIC = 'EPISODIC',
+  SEMANTIC = 'SEMANTIC',
+  PROCEDURAL = 'PROCEDURAL'
+}

@@ -1,0 +1,7 @@
+export enum ModelAvailability {
+  AVAILABLE = 'AVAILABLE',
+  UNAVAILABLE = 'UNAVAILABLE',
+  LOADING = 'LOADING',
+  ERROR = 'ERROR',
+  UNKNOWN = 'UNKNOWN'
+}

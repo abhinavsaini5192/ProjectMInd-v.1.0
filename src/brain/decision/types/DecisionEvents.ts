@@ -1,0 +1,11 @@
+export const DECISION_STARTED = 'Decision:Started';
+export const INTENT_RESOLVED = 'Decision:IntentResolved';
+export const TASK_DECOMPOSED = 'Decision:TaskDecomposed';
+export const FEATURE_RESOLVED = 'Decision:FeatureResolved';
+export const CONTEXT_PLANNED = 'Decision:ContextPlanned';
+export const CONTEXT_RANKED = 'Decision:ContextRanked';
+export const IMPACT_ANALYZED = 'Decision:ImpactAnalyzed';
+export const RISK_CALCULATED = 'Decision:RiskCalculated';
+export const DECISION_COMPLETED = 'Decision:Completed';
+export const DECISION_FAILED = 'Decision:Failed';
+export const DECISION_FEEDBACK_RECEIVED = 'Decision:FeedbackReceived';

@@ -1,0 +1,10 @@
+export const VALIDATION_STARTED = 'Validation:Started';
+export const VALIDATION_COMPLETED = 'Validation:Completed';
+export const VALIDATION_FAILED = 'Validation:Failed';
+export const INTEGRITY_VIOLATION_DETECTED = 'Validation:IntegrityViolationDetected';
+export const KNOWLEDGE_DEGRADED = 'Validation:KnowledgeDegraded';
+export const KNOWLEDGE_RECOVERED = 'Validation:KnowledgeRecovered';
+export const REPAIR_STARTED = 'Validation:RepairStarted';
+export const REPAIR_COMPLETED = 'Validation:RepairCompleted';
+export const REPAIR_FAILED = 'Validation:RepairFailed';
+export const HEALTH_SCORE_CHANGED = 'Validation:HealthScoreChanged';
