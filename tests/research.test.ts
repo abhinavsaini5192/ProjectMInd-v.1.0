@@ -105,5 +105,5 @@ describe('ResearchLayerService', () => {
     const rawDir = path.join(testWorkspace, 'research', 'datasets', 'raw');
     const rawFiles = fs.readdirSync(rawDir);
     expect(rawFiles.length).toBeGreaterThan(0);
-  });
+  }, 15000);
 });

@@ -13,6 +13,8 @@ import { PlanningAdapter } from '../integration/PlanningAdapter';
 import { ExecutionAdapter } from '../integration/ExecutionAdapter';
 import { FeedbackAdapter } from '../integration/FeedbackAdapter';
 
+import { PlanFreshnessValidator } from '../../agent/hardening/PlanFreshnessValidator';
+
 export class TaskLoop {
   private stateMachine = new TaskStateMachine();
   private cycleManager = new CycleManager();
@@ -26,7 +28,8 @@ export class TaskLoop {
     private reasoningAdapter: ReasoningAdapter,
     private planningAdapter: PlanningAdapter,
     private executionAdapter: ExecutionAdapter,
-    private feedbackAdapter: FeedbackAdapter
+    private feedbackAdapter: FeedbackAdapter,
+    private freshnessValidator?: PlanFreshnessValidator
   ) {}
 
   public async executeCycle(
@@ -69,6 +72,10 @@ export class TaskLoop {
     cycle.planId = plan.planId;
 
     task.status = this.stateMachine.transition(task.status, TaskState.PLAN_VALIDATION);
+
+    if (this.freshnessValidator) {
+      await this.freshnessValidator.validateFreshness(plan, undefined, true);
+    }
 
     // 5. Check Approval Requirement
     if (this.approvalGuard.requiresApproval(plan, policy)) {

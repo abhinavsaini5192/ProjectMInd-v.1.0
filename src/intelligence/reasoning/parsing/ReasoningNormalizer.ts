@@ -48,7 +48,7 @@ export class ReasoningNormalizer {
 
     const decision = {
       status: raw.decision?.status || (conclusions.length > 0 ? 'READY_FOR_EXECUTION' : 'NO_DECISION'),
-      decisionType: raw.decision?.decisionType || raw.decisionType || 'MODIFY_CODE',
+      decisionType: raw.decision?.decisionType || raw.decision?.type || raw.decisionType || 'MODIFY_CODE',
       targets: Array.isArray(raw.decision?.targets) ? raw.decision.targets : (Array.isArray(raw.targets) ? raw.targets : []),
       actions: Array.isArray(raw.decision?.actions) ? raw.decision.actions : (Array.isArray(raw.actions) ? raw.actions : []),
       constraints: Array.isArray(raw.decision?.constraints) ? raw.decision.constraints : (Array.isArray(raw.constraints) ? raw.constraints : []),

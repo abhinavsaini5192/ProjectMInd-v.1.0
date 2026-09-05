@@ -12,6 +12,9 @@ export class TerminationManager {
       if (cycle.feedbackResult) {
         changesApplied.push(...cycle.feedbackResult.changes.filesModified, ...cycle.feedbackResult.changes.filesAdded);
         unresolvedIssues.push(...cycle.feedbackResult.unresolvedIssues);
+        if (cycle.feedbackResult.outcome?.verificationSuccess) {
+          verificationsPassed.push(`Cycle ${cycle.cycleNumber}: verification passed`);
+        }
       }
     }
 

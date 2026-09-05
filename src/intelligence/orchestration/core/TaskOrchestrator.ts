@@ -139,6 +139,10 @@ export class TaskOrchestrator {
     return task.status;
   }
 
+  public getTask(taskId: string): Task | undefined {
+    return this.activeTasks.get(taskId);
+  }
+
   public previewTask(userRequest: string): { goal: string; estimatedCycles: number; risk: string } {
     const goal = this.goalManager.parseGoal(userRequest);
     return {
