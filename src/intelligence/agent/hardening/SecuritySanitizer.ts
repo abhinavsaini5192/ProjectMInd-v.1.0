@@ -17,8 +17,8 @@ export class SecuritySanitizer {
     { regex: /eyJ[A-Za-z0-9-_=]+\.[A-Za-z0-9-_=]+\.?[A-Za-z0-9-_.+/=]*/g, replacement: '[REDACTED_JWT_TOKEN]' },
     // Private keys
     { regex: /-----BEGIN (?:[A-Z\s]+) PRIVATE KEY-----[\s\S]*?-----END (?:[A-Z\s]+) PRIVATE KEY-----/g, replacement: '[REDACTED_PRIVATE_KEY]' },
-    // Generic API Key / Password assignment
-    { regex: /((?:password|secret|api_key|apikey|token|auth_token)\s*[:=]\s*['"])([^'"]+)(['"])/gi, replacement: '$1[REDACTED_SECRET]$3' },
+    // Generic API Key / Password assignment (supports quoted or unquoted, does not overwrite prior redactions)
+    { regex: /((?:password|secret|api_key|apikey|token|auth_token)\s*[:=]\s*['"]?)(?!\[REDACTED)([^'"\s,;]+)(['"]?)/gi, replacement: '$1[REDACTED_SECRET]$3' },
   ];
 
   /**
